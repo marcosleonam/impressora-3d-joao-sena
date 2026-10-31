@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressora 3D · João Sena</title>
+<meta name="description" content="Cinco impressoras 3D analisadas para o presente da filha do João Sena: preço no Paraguai, o que cada uma faz e qual aceita IA no comando.">
+<meta property="og:title" content="João, escolha a sua impressora 3D">
+<meta property="og:description" content="Curadoria com preço do Paraguai, top 3 e um quiz rápido.">
+<meta property="og:image" content="img/a1-hero.webp">
+<meta name="theme-color" content="#f57757">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--coral:#f57757;--cream:#faf7ee;--ink:#182d2a;--blue:#315bea;--mint:#dce7ca;--yellow:#f9db6d;--line:rgba(24,45,42,.16);--muted:#68736c;--gutter:clamp(18px,4.45vw,88px);--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Manrope,Arial,sans-serif;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:clip}
+button{font:inherit;color:inherit;cursor:pointer}a{color:inherit;text-decoration:none}
+button:focus-visible,a:focus-visible{outline:3px solid #164dcc;outline-offset:5px}
+::selection{background:var(--yellow);color:var(--ink)}
+h1,h2,h3,h4,p{margin:0}h2{font-size:clamp(38px,5.6vw,86px);font-weight:600;line-height:1.04;letter-spacing:-.065em}
+h2 em{font-style:normal;color:var(--coral)}
+img{display:block;max-width:100%;height:auto}
+.eyebrow{font-size:10px;font-weight:600;letter-spacing:.18em;line-height:1.7;text-transform:uppercase}
+.wrap{padding-left:var(--gutter);padding-right:var(--gutter)}
+.mark{display:grid;grid-template-columns:1fr 1fr;gap:3px;width:34px;height:34px;flex-shrink:0}
+.mark i{background:currentColor;border-radius:45% 45% 12% 45%}.mark i:nth-child(2){transform:rotate(90deg)}.mark i:nth-child(3){transform:rotate(-90deg)}.mark i:nth-child(4){transform:rotate(180deg)}
+.wordmark{display:inline-flex;align-items:center;gap:10px;font-size:34px;font-weight:800;letter-spacing:-.07em;line-height:1}
+.arrow{font-size:20px;line-height:1;transition:transform .35s var(--ease)}
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;padding:17px 22px;min-height:54px;background:var(--cream);color:var(--ink);border:1px solid transparent;border-radius:3px;font-size:13px;font-weight:600;transition:background .3s,color .3s,transform .3s,box-shadow .3s}
+.btn:hover{background:var(--yellow);transform:translateY(-3px);box-shadow:0 7px 0 #182d2a16}.btn:hover .arrow{transform:translate(3px,-3px)}
+.btn.ink{background:var(--ink);color:var(--cream)}.btn.ink:hover{background:var(--blue)}
+.text-link{display:inline-flex;gap:13px;align-items:center;font-size:13px;font-weight:600;padding:10px 0}
+.round-icon{border:1px solid currentColor;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:12px}
+.tag{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:600;letter-spacing:.06em;border:1px solid currentColor;border-radius:50px;padding:5px 11px;white-space:nowrap}
+.dot{width:6px;height:6px;border-radius:50%;background:currentColor;display:inline-block}
+.js .reveal{clip-path:inset(0 0 100% 0);transform:translateY(32px);transition:clip-path 1s var(--ease),transform 1s var(--ease)}
+.js .reveal.visible{clip-path:inset(-4% -4% -4% -4%);transform:none}
+
+/* header */
+header{position:fixed;top:0;left:0;width:100%;height:84px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter);z-index:20;color:var(--cream);border-bottom:1px solid #fff4e326;transition:background .3s,color .3s,height .3s}
+header.scrolled{height:68px;background:rgba(250,247,238,.95);color:var(--ink);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
+header.scrolled .nav-cta{background:var(--ink);color:var(--cream)}
+nav{display:flex;gap:32px}nav a{font-size:12px;position:relative}
+nav a:after{content:'';height:1px;background:currentColor;position:absolute;bottom:-7px;left:0;width:0;transition:width .25s}nav a:hover:after{width:100%}
+.nav-cta{padding:12px 18px;min-height:42px;font-size:11px;gap:22px}
+.progress{position:fixed;top:0;left:0;z-index:21;width:100%;height:3px;background:var(--blue);transform:scaleX(0);transform-origin:left}
+
+/* hero */
+.hero{position:relative;min-height:760px;height:min(880px,100svh);background:var(--coral);color:var(--cream);overflow:hidden}
+.hero:before{content:'';position:absolute;inset:0 var(--gutter);border-left:1px solid #fff5df17;border-right:1px solid #fff5df17;background:linear-gradient(90deg,transparent calc(33.33% - 1px),#fff5df17 33.33%,transparent calc(33.33% + 1px),transparent calc(66.66% - 1px),#fff5df17 66.66%,transparent calc(66.66% + 1px))}
+.hero-copy{position:relative;z-index:3;padding-top:clamp(150px,13vw,210px);width:56%}
+.hero .eyebrow{margin-bottom:22px}
+.hero h1{font-family:Inter,Manrope,sans-serif;font-size:clamp(64px,8vw,130px);font-weight:800;line-height:.94;letter-spacing:-.075em}
+.hero h1 span{display:block}
+.hero-copy p{color:var(--ink);font-size:16px;line-height:1.65;max-width:410px;margin:26px 0}
+.hero-actions{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.hero-art{position:absolute;right:2%;top:96px;width:46%;height:calc(100% - 170px);z-index:2;display:flex;align-items:flex-end;justify-content:center}
+.stage{position:relative;width:min(100%,560px);aspect-ratio:1/1.05;display:flex;align-items:flex-end;justify-content:center}
+.stage .printer{position:relative;z-index:2;width:72%;margin-bottom:12%;filter:drop-shadow(0 30px 28px #7a2a1440);animation:float 7s ease-in-out infinite}
+.pedestal{position:absolute;bottom:2%;left:50%;width:92%;height:24%;transform:translateX(-50%);z-index:1}
+.pedestal:before{content:'';position:absolute;inset:28% 0 0;border-radius:50%;background:linear-gradient(180deg,#fffaf0,#e9dcc4);box-shadow:0 22px 40px #8a2e1a33,inset 0 -8px 18px #c9b08a55}
+.pedestal:after{content:'';position:absolute;left:9%;right:9%;top:0;height:60%;border-radius:50%;background:linear-gradient(180deg,#ff9a6e,#e8582f);box-shadow:inset 0 4px 10px #ffd0b088,0 8px 0 #c9472533}
+.orbits i{position:absolute;border:1px solid #fff5df40;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}
+.orbits i:nth-child(1){width:115%;aspect-ratio:1;animation:spin 40s linear infinite}
+.orbits i:nth-child(2){width:88%;aspect-ratio:1;border-style:dashed;border-color:#fff5df30;animation:spin 60s linear infinite reverse}
+.orbits i:nth-child(1):after{content:'';position:absolute;top:8%;left:15%;width:10px;height:10px;border-radius:50%;background:var(--cream)}
+.sphere{position:absolute;z-index:3;width:56px;height:56px;border-radius:50%;left:6%;top:38%;background:radial-gradient(circle at 32% 30%,#fff6c8,#e7b23a 45%,#8b5a10);box-shadow:0 14px 24px #6b2a1040;animation:float 5s ease-in-out infinite reverse}
+.cube{position:absolute;z-index:3;width:46px;height:46px;border-radius:10px;background:linear-gradient(145deg,#fff,#e8e1d1);box-shadow:0 12px 20px #6b2a1033;animation:float 6s ease-in-out infinite}
+.cube.c1{right:4%;top:22%}.cube.c2{left:12%;top:8%;width:32px;height:32px;animation-delay:-2s}
+.float-note{position:absolute;z-index:4;display:flex;align-items:center;gap:9px;background:var(--cream);color:var(--ink);font-size:12px;font-weight:600;padding:10px 14px;border-radius:3px;box-shadow:0 10px 30px #6b2a1022;white-space:nowrap}
+.float-note.n1{top:4%;left:4%}.float-note.n2{top:46%;right:-2%}.float-note.n3{bottom:6%;left:-4%}
+.check{display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#2f7a52;color:#fff;font-size:10px}
+.hero-foot{position:absolute;bottom:26px;left:var(--gutter);right:var(--gutter);display:flex;justify-content:space-between;align-items:center;border-top:1px solid #fff5df40;padding-top:14px;font-size:10px;letter-spacing:.16em;z-index:3}
+.hero-ghost{position:absolute;bottom:56px;left:var(--gutter);font-family:Inter,sans-serif;font-weight:800;font-size:clamp(70px,14vw,230px);letter-spacing:-.08em;line-height:.8;color:#fff5df10;z-index:0;white-space:nowrap;pointer-events:none}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+
+/* strip */
+.strip{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px var(--gutter);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.strip .brands{display:flex;gap:clamp(20px,4vw,64px);align-items:center;flex-wrap:wrap}
+.strip .brand{font-family:Inter,sans-serif;font-weight:800;font-size:clamp(20px,2.2vw,30px);letter-spacing:-.05em}
+.strip .brand small{font-family:Manrope;font-weight:600;font-size:10px;letter-spacing:.14em;color:var(--muted);margin-left:8px;text-transform:uppercase}
+
+/* intro */
+.intro{display:grid;grid-template-columns:1fr 2fr;gap:40px;padding-top:120px;padding-bottom:110px}
+.intro-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-top:40px}
+.intro-bottom p{max-width:470px;line-height:1.7;font-size:16px;color:#3c4a46}
+.intro .mark{color:var(--coral);width:62px;height:62px;gap:5px}
+
+/* top3 workbench */
+.bench{padding-bottom:120px}
+.bench-top{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:30px;flex-wrap:wrap}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{border:1px solid var(--line);background:transparent;padding:11px 18px;border-radius:50px;font-size:12px;font-weight:600;transition:all .25s}
+.tab[aria-selected=true]{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.tab:hover{border-color:var(--ink)}
+.bench-label{font-size:10px;letter-spacing:.16em;color:var(--muted)}
+.bench-grid{display:grid;grid-template-columns:1fr 1.1fr;border:1px solid var(--line);min-height:560px}
+.bench-visual{position:relative;background:var(--mint);padding:34px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.bench-visual .rank{font-family:Inter,sans-serif;font-weight:800;font-size:clamp(120px,14vw,220px);letter-spacing:-.08em;line-height:.8;color:#182d2a10;position:absolute;right:20px;top:24px}
+.bench-visual img{width:min(78%,420px);margin:10px auto 0;filter:drop-shadow(0 24px 24px #182d2a30);transition:opacity .4s,transform .6s var(--ease)}
+.bench-visual img.swap{opacity:0;transform:translateY(18px) scale(.97)}
+.price-box{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;border-top:1px solid #182d2a26;padding-top:18px;flex-wrap:wrap}
+.price{font-family:Inter,sans-serif;font-weight:800;font-size:clamp(34px,3.6vw,52px);letter-spacing:-.06em;line-height:1}
+.price small{font-family:Manrope;font-size:12px;font-weight:600;letter-spacing:0;color:var(--muted);margin-left:6px}
+.price-sub{font-size:12px;color:#3c4a46;margin-top:6px}
+.bench-info{background:var(--cream);padding:38px clamp(22px,3vw,44px);display:flex;flex-direction:column;gap:24px}
+.bench-info h3{font-size:clamp(28px,2.6vw,40px);font-weight:600;letter-spacing:-.05em;line-height:1.05}
+.bench-info .why{font-size:15px;line-height:1.7;color:#3c4a46}
+.specs{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line)}
+.specs div{padding:14px;border-right:1px solid var(--line)}.specs div:last-child{border-right:0}
+.specs b{display:block;font-size:17px;font-weight:700;letter-spacing:-.03em}.specs span{font-size:10px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.lists{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.lists ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:9px;font-size:13px;line-height:1.5}
+.lists li{display:flex;gap:10px}.lists li:before{content:'✓';color:#2f7a52;font-weight:700}
+.lists .cons li:before{content:'–';color:var(--coral)}
+.bench-actions{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:auto}
+
+/* quiz */
+.quiz{background:var(--blue);color:var(--cream);padding:120px var(--gutter);position:relative;overflow:hidden}
+.quiz:before{content:'';position:absolute;width:900px;aspect-ratio:1;border:1px solid #ffffff22;border-radius:50%;right:-260px;top:50%;transform:translateY(-50%)}
+.quiz:after{content:'';position:absolute;width:600px;aspect-ratio:1;border:1px solid #ffffff18;border-radius:50%;right:-110px;top:50%;transform:translateY(-50%)}
+.quiz-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:start}
+.quiz h2{font-weight:500}
+.quiz-desc{margin-top:22px;line-height:1.7;max-width:380px;color:#e6ebff}
+.badge-round{position:absolute;right:var(--gutter);top:70px;width:110px;height:110px;border-radius:50%;background:var(--yellow);color:var(--ink);display:grid;place-items:center;text-align:center;font-size:10px;font-weight:700;letter-spacing:.12em;line-height:1.5;transform:rotate(14deg);z-index:2}
+.q{border-top:1px solid #ffffff40;padding:22px 0}
+.q p{font-size:13px;font-weight:600;margin-bottom:14px}.q p small{opacity:.6;margin-right:10px}
+.opts{display:flex;gap:8px;flex-wrap:wrap}
+.opt{background:transparent;border:1px solid #ffffff66;color:var(--cream);padding:11px 16px;border-radius:50px;font-size:12px;font-weight:600;transition:all .2s}
+.opt:hover{border-color:#fff}.opt[aria-pressed=true]{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.result{margin-top:10px;background:var(--cream);color:var(--ink);border-radius:3px;padding:24px;display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center;min-height:150px}
+.result img{width:120px;height:130px;object-fit:contain}
+.result .eyebrow{color:var(--blue)}
+.result h4{font-size:24px;font-weight:600;letter-spacing:-.04em;margin:4px 0 6px}
+.result p{font-size:13px;line-height:1.6;color:#3c4a46}
+.result.empty{grid-template-columns:1fr;text-align:center;color:var(--muted);font-size:13px}
+
+/* vitrine */
+.vitrine{padding-top:120px;padding-bottom:120px}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:46px;flex-wrap:wrap}
+.section-head p.lead{max-width:360px;line-height:1.7;color:#3c4a46}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line)}
+.card{position:relative;display:flex;flex-direction:column;border-right:1px solid var(--line);background:var(--cream);transition:background .3s}
+.card:last-child{border-right:0}.card:hover{background:#fff}
+.card .media{position:relative;aspect-ratio:1/1.05;background:#efeadd;display:grid;place-items:center;padding:22px;overflow:hidden}
+.card.top .media{background:var(--mint)}
+.card .media img{max-height:100%;object-fit:contain;transition:transform .6s var(--ease);filter:drop-shadow(0 16px 16px #182d2a26)}
+.card:hover .media img{transform:scale(1.05) translateY(-4px)}
+.card .ribbon{position:absolute;top:14px;left:14px;background:var(--ink);color:var(--cream);font-size:10px;font-weight:700;letter-spacing:.12em;padding:6px 10px;border-radius:2px}
+.card .ribbon.gold{background:var(--yellow);color:var(--ink)}
+.card .ribbon.off{background:#b9b2a3}
+.card .body{padding:20px;display:flex;flex-direction:column;gap:12px;flex:1}
+.card .brand-l{font-size:10px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;font-weight:600}
+.card h3{font-size:19px;font-weight:700;letter-spacing:-.04em;line-height:1.15}
+.card .stars{color:var(--coral);font-size:12px;letter-spacing:2px}
+.card .stars span{color:var(--muted);letter-spacing:0;margin-left:6px;font-size:11px}
+.card .p{font-family:Inter,sans-serif;font-weight:800;font-size:26px;letter-spacing:-.05em}
+.card .p small{font-family:Manrope;font-weight:600;font-size:11px;color:var(--muted);letter-spacing:0;display:block;margin-top:2px}
+.card .tags{display:flex;flex-wrap:wrap;gap:6px}.card .tags .tag{font-size:9px;padding:4px 9px;color:#3c4a46}
+.card .stock{font-size:11px;display:flex;align-items:center;gap:7px;color:#2f7a52;font-weight:600}.card .stock.no{color:#b3492d}
+.card .btn{margin-top:auto;width:100%;padding:14px 16px;min-height:46px;font-size:12px;border:1px solid var(--ink)}
+.card .btn.ink{border-color:var(--ink)}
+
+/* compare */
+.compare{padding-bottom:120px}
+.cmp{width:100%;border-collapse:collapse;font-size:13px}
+.cmp-wrap{overflow-x:auto;border:1px solid var(--line)}
+.cmp th,.cmp td{padding:16px 18px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.cmp thead th{font-size:15px;font-weight:700;letter-spacing:-.03em;background:#f2eee2;white-space:nowrap}
+.cmp thead th small{display:block;font-size:10px;font-weight:600;letter-spacing:.14em;color:var(--muted);margin-bottom:4px}
+.cmp tbody th{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;white-space:nowrap;width:180px}
+.cmp .hl{background:#dce7ca7a}
+.cmp tr:last-child td,.cmp tr:last-child th{border-bottom:0}
+.meter{display:flex;gap:3px;margin-top:4px}.meter i{width:16px;height:6px;border-radius:2px;background:#182d2a1c}.meter i.on{background:var(--ink)}
+
+/* AI */
+.ai{background:var(--ink);color:var(--cream);padding:120px var(--gutter)}
+.ai h2 em{color:var(--mint);font-style:normal}
+.ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:60px;align-items:start}
+.flow{display:grid;gap:0}
+.flow .step{display:grid;grid-template-columns:54px 1fr;gap:18px;padding:22px 0;border-top:1px solid #ffffff22}
+.flow .step:last-child{border-bottom:1px solid #ffffff22}
+.flow .n{font-family:Inter,sans-serif;font-weight:800;font-size:28px;letter-spacing:-.06em;color:var(--mint)}
+.flow h4{font-size:17px;font-weight:600;letter-spacing:-.03em;margin-bottom:6px}
+.flow p{font-size:13px;line-height:1.65;color:#c9d3cd}
+.chat{background:#203a36;border:1px solid #ffffff1c;border-radius:4px;padding:22px;font-size:13px;line-height:1.6}
+.chat .bar{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.16em;color:#9fb2ab;margin-bottom:18px}
+.msg{display:flex;gap:12px;margin-bottom:16px}.msg .av{flex-shrink:0;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:9px;font-weight:700;background:var(--coral);color:var(--cream)}
+.msg.bot .av{background:var(--mint);color:var(--ink)}
+.msg .bubble{background:#ffffff0d;padding:10px 14px;border-radius:3px}
+.msg.bot .bubble{background:var(--cream);color:var(--ink)}
+.exec{display:grid;gap:7px;margin:4px 0 16px 42px}
+.exec span{display:flex;gap:10px;align-items:center;font-size:12px;color:#c9d3cd;opacity:.25;transition:opacity .4s}
+.exec span.on{opacity:1}.exec span b{color:var(--mint)}
+.ai-score{margin-top:30px;display:grid;gap:10px}
+.ai-score div{display:flex;justify-content:space-between;align-items:center;font-size:13px;border-bottom:1px solid #ffffff1c;padding-bottom:10px}
+.ai-score .meter i{background:#ffffff22}.ai-score .meter i.on{background:var(--mint)}
+
+/* faq */
+.faq{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;padding-top:120px;padding-bottom:120px}
+details{border-top:1px solid var(--line);padding:22px 0}details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-size:18px;font-weight:600;letter-spacing:-.03em}
+summary::-webkit-details-marker{display:none}
+summary:after{content:'+';font-size:22px;font-weight:400;transition:transform .3s}
+details[open] summary:after{transform:rotate(45deg)}
+details p{margin-top:14px;line-height:1.7;color:#3c4a46;max-width:620px}
+
+/* footer */
+footer{background:var(--coral);color:var(--cream);padding:90px var(--gutter) 30px;overflow:hidden}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.foot-top h2{color:var(--cream)}
+.foot-ghost{font-family:Inter,sans-serif;font-weight:800;font-size:clamp(70px,15vw,250px);letter-spacing:-.08em;line-height:.85;margin-top:70px;color:#fff5df;white-space:nowrap}
+.foot-bottom{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #fff5df40;margin-top:30px;padding-top:18px;font-size:11px;letter-spacing:.06em;flex-wrap:wrap}
+
+/* modal (pedido) */
+.sheet{position:fixed;inset:0;z-index:50;display:none;align-items:flex-end;justify-content:center;background:#182d2a66;backdrop-filter:blur(6px)}
+.sheet.open{display:flex}
+.sheet-box{background:var(--cream);width:min(560px,100%);border-radius:6px 6px 0 0;padding:28px;animation:up .45s var(--ease)}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+.sheet-head{display:grid;grid-template-columns:96px 1fr auto;gap:18px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:18px}
+.sheet-head img{width:96px;height:96px;object-fit:contain;background:var(--mint);border-radius:4px;padding:8px}
+.sheet-head h4{font-size:20px;font-weight:700;letter-spacing:-.04em}
+.close{border:1px solid var(--line);background:none;width:38px;height:38px;border-radius:50%;font-size:16px}
+.sheet ul{list-style:none;padding:0;margin:18px 0;display:grid;gap:10px;font-size:13px}
+.sheet li{display:flex;justify-content:space-between;gap:16px;border-bottom:1px dashed var(--line);padding-bottom:10px}
+.sheet li span:first-child{color:var(--muted)}
+.sheet .btn{width:100%}
+.sheet .fine{font-size:11px;color:var(--muted);margin-top:12px;line-height:1.5}
+
+@media (max-width:1180px){
+  .cards{grid-template-columns:repeat(3,1fr)}.card{border-bottom:1px solid var(--line)}.card:nth-child(3){border-right:0}
+}
+@media (max-width:960px){
+  nav{display:none}
+  .hero{height:auto;min-height:0;padding-bottom:110px}
+  .hero-copy{width:100%;padding-top:130px}
+  .hero-art{position:relative;right:auto;top:auto;width:100%;height:auto;margin-top:30px}
+  .stage{width:min(100%,440px);margin:0 auto}
+  .float-note.n2{right:0}.float-note.n3{left:0}
+  .intro,.quiz-grid,.ai-grid,.faq{grid-template-columns:1fr;gap:30px}
+  .intro{padding-top:80px;padding-bottom:70px}
+  .bench-grid{grid-template-columns:1fr}
+  .badge-round{display:none}
+  .quiz,.ai{padding-top:80px;padding-bottom:80px}
+  .vitrine,.faq{padding-top:80px;padding-bottom:80px}
+}
+@media (max-width:640px){
+  body{font-size:14px}
+  .nav-cta{display:none}
+  .hero h1{font-size:clamp(52px,16vw,80px)}
+  .hero-copy p{font-size:15px}
+  .float-note{font-size:11px;padding:8px 11px}.float-note.n1{left:0;top:0}
+  .cards{grid-template-columns:1fr 1fr}.card:nth-child(3){border-right:1px solid var(--line)}.card:nth-child(2n){border-right:0}
+  .card .body{padding:14px}.card h3{font-size:16px}.card .p{font-size:21px}
+  .card:last-child{grid-column:1/-1}
+  .specs{grid-template-columns:1fr 1fr 1fr}.specs div{padding:10px}.specs b{font-size:14px}
+  .lists{grid-template-columns:1fr}
+  .bench-info{padding:26px 18px}.bench-visual{padding:22px}
+  .result{grid-template-columns:80px 1fr;padding:18px}.result img{width:80px;height:90px}
+  .intro-bottom .mark{display:none}
+  .hero-foot span:nth-child(2){display:none}
+  .sheet-box{padding:22px 18px}.sheet-head{grid-template-columns:70px 1fr auto}.sheet-head img{width:70px;height:70px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .reveal{clip-path:none;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<header id="header">
+  <a href="#topo" class="wordmark" aria-label="Início"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>sena 3d</a>
+  <nav aria-label="Navegação"><a href="#top3">Top 3</a><a href="#quiz">Qual é a sua?</a><a href="#vitrine">Vitrine</a><a href="#comparar">Comparar</a><a href="#ia">IA no comando</a></nav>
+  <a class="btn nav-cta" href="#vitrine">Escolher agora <span class="arrow" aria-hidden="true">↗</span></a>
+</header>
+
+<main id="topo">
+<section class="hero" aria-labelledby="h1">
+  <div class="hero-ghost" aria-hidden="true">BAMBU A1.</div>
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow">Curadoria para João Sena · Paraguai, 31/10/2026</div>
+      <h1 id="h1"><span>João,</span><span>escolha</span><span>a sua.</span></h1>
+      <p>Cinco impressoras 3D analisadas para o presente da sua filha: preço do Paraguai, o que cada uma faz e qual aceita uma IA no comando.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#top3">Ver as 3 melhores <span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="text-link" href="#quiz"><span class="round-icon" aria-hidden="true">▶</span> Fazer o quiz de 20 segundos</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-art">
+    <div class="stage">
+      <div class="orbits" aria-hidden="true"><i></i><i></i></div>
+      <span class="cube c1" aria-hidden="true"></span><span class="cube c2" aria-hidden="true"></span><span class="sphere" aria-hidden="true"></span>
+      <img class="printer" src="img/a1-hero.webp" alt="Impressora 3D Bambu Lab A1" width="1152" height="1390" fetchpriority="high">
+      <div class="pedestal" aria-hidden="true"></div>
+      <div class="float-note n1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4 9-4V7M12 11v10"/></svg>Bambu Lab A1 · U$ 425</div>
+      <div class="float-note n2"><span class="check">✓</span>Cabe na cota de US$ 500</div>
+      <div class="float-note n3"><span class="dot" style="color:var(--coral)"></span>Liga e imprime em 15 min</div>
+    </div>
+  </div>
+  <div class="hero-foot"><span>01 / A ESCOLHA DO PRESENTE</span><span>5 MODELOS · 3 MARCAS · 1 DECISÃO</span><a href="#intro">ROLE PARA ESCOLHER ↓</a></div>
+</section>
+
+<div class="strip" aria-label="Marcas analisadas">
+  <p class="eyebrow">Marcas analisadas<br>preço consultado hoje</p>
+  <div class="brands"><span class="brand">Bambu Lab<small>3 modelos</small></span><span class="brand">Anycubic<small>1 modelo</small></span><span class="brand">Creality<small>1 modelo</small></span></div>
+</div>
+
+<section class="intro wrap" id="intro">
+  <p class="eyebrow">01 / O presente</p>
+  <div>
+    <h2 class="reveal">Uma máquina que vira<br>ideia em objeto. <em>Na mesma tarde.</em></h2>
+    <div class="intro-bottom">
+      <p>Chaveiro com o nome dela, peça de Lego que sumiu, bonequinho que ela mesma desenhou. Uma impressora 3D ensina desenho, paciência e tecnologia brincando. A gente filtrou o que importa para uma menina de 10 a 12 anos: fácil de usar, segura, colorida e com preço bom no Paraguai.</p>
+      <span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    </div>
+  </div>
+</section>
+
+<section class="bench wrap" id="top3" aria-label="As 3 melhores">
+  <div class="bench-top">
+    <div class="tabs" role="tablist" aria-label="Top 3">
+      <button class="tab" role="tab" aria-selected="true" data-pick="0">01 &nbsp; Bambu A1 mini Combo</button>
+      <button class="tab" role="tab" aria-selected="false" data-pick="1">02 &nbsp; Anycubic Kobra S1</button>
+      <button class="tab" role="tab" aria-selected="false" data-pick="2">03 &nbsp; Creality K1C</button>
+    </div>
+    <span class="bench-label">AS 3 MELHORES PARA O PRESENTE ↙</span>
+  </div>
+  <div class="bench-grid" role="tabpanel">
+    <div class="bench-visual">
+      <span class="rank" id="b-rank">01</span>
+      <span class="tag" id="b-tag" style="align-self:flex-start"><span class="dot"></span>Recomendada para a idade</span>
+      <img id="b-img" src="img/a1-mini.webp" alt="" width="597" height="806">
+      <div class="price-box">
+        <div><div class="price" id="b-price">U$ 470<small>Gs. 2.867.000</small></div><div class="price-sub" id="b-store">Shopping China · Ciudad del Este</div></div>
+        <span class="tag" id="b-stock" style="color:#2f7a52"><span class="dot"></span>Disponível</span>
+      </div>
+    </div>
+    <div class="bench-info">
+      <div><p class="eyebrow" id="b-brand" style="color:var(--coral)">Bambu Lab</p><h3 id="b-name">A1 mini Combo (4 cores)</h3></div>
+      <p class="why" id="b-why"></p>
+      <div class="specs" id="b-specs"></div>
+      <div class="lists"><div><p class="eyebrow">O que ela tem de bom</p><ul id="b-pros"></ul></div><div class="cons"><p class="eyebrow">Fique de olho</p><ul id="b-cons"></ul></div></div>
+      <div class="bench-actions"><button class="btn ink" data-buy id="b-buy">Quero essa <span class="arrow" aria-hidden="true">↗</span></button><a class="text-link" href="#comparar">Comparar lado a lado <span class="arrow" aria-hidden="true">→</span></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="quiz" id="quiz" aria-labelledby="quiz-h">
+  <div class="badge-round" aria-hidden="true">3 PERGUNTAS<br>20 SEGUNDOS</div>
+  <div class="quiz-grid">
+    <div>
+      <p class="eyebrow">02 / Qual é a sua?</p>
+      <h2 id="quiz-h" style="margin-top:22px">Responda três<br>coisas. A gente<br>aponta uma.</h2>
+      <p class="quiz-desc">Não existe impressora perfeita, existe a certa para quem vai usar. Escolha uma opção em cada linha e a recomendação aparece na hora.</p>
+    </div>
+    <div>
+      <div class="q" data-q="uso"><p><small>01</small>Quem vai mexer mais nela?</p><div class="opts"><button class="opt" data-v="filha" aria-pressed="false">A filha, sozinha</button><button class="opt" data-v="junto" aria-pressed="false">Pai e filha juntos</button><button class="opt" data-v="pai" aria-pressed="false">Mais o pai</button></div></div>
+      <div class="q" data-q="cor"><p><small>02</small>Imprimir em várias cores é importante?</p><div class="opts"><button class="opt" data-v="sim" aria-pressed="false">Sim, ela vai amar</button><button class="opt" data-v="nao" aria-pressed="false">Uma cor já basta</button></div></div>
+      <div class="q" data-q="ia"><p><small>03</small>Quer colocar uma IA comandando a impressora?</p><div class="opts"><button class="opt" data-v="muito" aria-pressed="false">Sim, é prioridade</button><button class="opt" data-v="talvez" aria-pressed="false">Seria um bônus</button><button class="opt" data-v="nao" aria-pressed="false">Não precisa</button></div></div>
+      <div class="result empty" id="result" aria-live="polite">Responda as três perguntas para ver a recomendação.</div>
+    </div>
+  </div>
+</section>
+
+<section class="vitrine wrap" id="vitrine" aria-labelledby="vit-h">
+  <div class="section-head">
+    <div><p class="eyebrow">03 / Vitrine</p><h2 id="vit-h" class="reveal" style="margin-top:18px">As cinco na<br>prateleira.</h2></div>
+    <p class="lead">Preços consultados hoje nas lojas de Ciudad del Este. Preço em dólar vale no balcão, em regime de turista e sem IVA. Clique em "Quero essa" para montar o pedido.</p>
+  </div>
+  <div class="cards" id="cards"></div>
+</section>
+
+<section class="compare wrap" id="comparar" aria-labelledby="cmp-h">
+  <div class="section-head"><div><p class="eyebrow">04 / Comparar</p><h2 id="cmp-h" class="reveal" style="margin-top:18px">Lado a lado.</h2></div><p class="lead">O que muda de verdade entre as três primeiras. A coluna verde é a nossa recomendação para a idade dela.</p></div>
+  <div class="cmp-wrap">
+    <table class="cmp">
+      <thead><tr><th></th><th class="hl"><small>01 · BAMBU LAB</small>A1 mini Combo</th><th><small>02 · ANYCUBIC</small>Kobra S1 Combo</th><th><small>03 · CREALITY</small>K1C</th></tr></thead>
+      <tbody>
+        <tr><th>Preço</th><td class="hl"><b>U$ 470</b> · Shopping China</td><td><b>US$ 399</b> · loja oficial (não achamos no Paraguai)</td><td><b>U$ 500</b> · Shopping China</td></tr>
+        <tr><th>Cores de uma vez</th><td class="hl">4 cores (AMS lite incluso)</td><td>4 cores (ACE Pro incluso, seca o filamento)</td><td>1 cor</td></tr>
+        <tr><th>Tamanho da peça</th><td class="hl">18 × 18 × 18 cm</td><td>25 × 25 × 25 cm</td><td>22 × 22 × 25 cm</td></tr>
+        <tr><th>Fechada (mais segura)</th><td class="hl">Não, estrutura aberta</td><td>Sim</td><td>Sim</td></tr>
+        <tr><th>Facilidade</th><td class="hl"><div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></td><td><div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></td><td><div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></td></tr>
+        <tr><th>IA no comando</th><td class="hl"><div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>Modo desenvolvedor da Bambu</td><td><div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>Firmware livre (Rinkhals)</td><td><div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>Klipper, aberta de fábrica</td></tr>
+        <tr><th>Cabe na cota US$ 500</th><td class="hl">Sim</td><td>Sim</td><td>No limite</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="ai" id="ia" aria-labelledby="ai-h">
+  <p class="eyebrow">05 / IA no comando</p>
+  <h2 id="ai-h" style="margin-top:22px">Ela pede.<br><em>A impressora faz.</em></h2>
+  <div class="ai-grid">
+    <div>
+      <div class="flow">
+        <div class="step"><span class="n">01</span><div><h4>A impressora entra no Wi-Fi de casa</h4><p>Na Bambu, liga o modo desenvolvedor na rede local. Na Kobra S1, instala o firmware livre Rinkhals. Na K1C, já vem aberta.</p></div></div>
+        <div class="step"><span class="n">02</span><div><h4>Um conector liga a IA à impressora</h4><p>Um servidor MCP de código aberto (ou o OctoEverywhere, pela nuvem) deixa um assistente como o Claude ver o status, mandar o arquivo e pausar ou cancelar.</p></div></div>
+        <div class="step"><span class="n">03</span><div><h4>Ela pede em português</h4><p>"Faz um chaveiro com meu nome em roxo." A IA busca ou monta o modelo, prepara e manda imprimir. O pai acompanha pelo celular.</p></div></div>
+      </div>
+      <div class="ai-score">
+        <div><span>Creality K1C</span><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+        <div><span>Anycubic Kobra S1</span><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+        <div><span>Bambu Lab A1 / A1 mini</span><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+      </div>
+    </div>
+    <div class="chat" aria-label="Exemplo de conversa">
+      <div class="bar"><span>ASSISTENTE + IMPRESSORA</span><span>● ONLINE</span></div>
+      <div class="msg"><span class="av">ELA</span><div class="bubble">Faz um chaveiro com meu nome em roxo e uma estrelinha?</div></div>
+      <div class="exec" id="exec"><span><b>✓</b> Modelo do chaveiro montado</span><span><b>✓</b> Filamento roxo no espaço 2</span><span><b>✓</b> Arquivo preparado: 38 min</span><span><b>✓</b> Impressão iniciada</span></div>
+      <div class="msg bot"><span class="av">IA</span><div class="bubble">Pronto! Seu chaveiro fica pronto em 38 minutos. Te aviso quando terminar. 💜</div></div>
+      <p style="font-size:10px;letter-spacing:.14em;color:#9fb2ab;margin-top:6px">EXEMPLO ILUSTRATIVO</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq wrap" id="faq" aria-labelledby="faq-h">
+  <div><p class="eyebrow">06 / Antes de pagar</p><h2 id="faq-h" style="margin-top:18px">Boas<br>perguntas.</h2></div>
+  <div>
+    <details open><summary>Quanto posso trazer sem pagar imposto?</summary><p>Por terra, a cota é de US$ 500 por pessoa. A A1, a A1 mini Combo e a Kobra S1 cabem com folga. A K1C fica no limite e a P1S passa bastante.</p></details>
+    <details><summary>O preço em dólar é diferente do preço em guarani?</summary><p>Sim. No Shopping China o preço em U$ vale só no balcão em Ciudad del Este, em regime de turista e sem IVA. O preço em Gs. é o da loja on-line. Para quem está viajando, o de dólar costuma sair melhor.</p></details>
+    <details><summary>Funciona na tomada do Brasil?</summary><p>A maioria desta lista aceita de 110 a 240 V, mas confira a etiqueta na caixa antes de pagar e leve um adaptador de tomada. A K1C da Nissei é anunciada como bivolt.</p></details>
+    <details><summary>É seguro para uma criança?</summary><p>O bico chega a mais de 200 °C. As fechadas (Kobra S1 e K1C) protegem mais. Nas abertas (linha A1), vale combinar que ela não põe a mão enquanto imprime. Todas usam PLA, um plástico sem cheiro forte.</p></details>
+    <details><summary>E o filamento, onde compra?</summary><p>Todas usam filamento de 1,75 mm, vendido no Brasil e no Paraguai. Vale trazer uns rolos de PLA de cores diferentes junto com a impressora.</p></details>
+    <details><summary>Esses preços são garantidos?</summary><p>Foram consultados no site das lojas em 31/10/2026. Loja de fronteira muda preço e estoque rápido, então confirme no balcão.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-top">
+    <h2>Escolheu?<br>Me avisa.</h2>
+    <a class="btn" href="https://wa.me/5598981235302?text=Oi%20Marcos!%20Vi%20a%20p%C3%A1gina%20das%20impressoras%203D." target="_blank" rel="noopener">Falar com o Marcos no WhatsApp <span class="arrow" aria-hidden="true">↗</span></a>
+  </div>
+  <div class="foot-ghost" aria-hidden="true">João Sena.</div>
+  <div class="foot-bottom"><span>Curadoria de Marcos Leonam para João Sena</span><span>Preços consultados em 31/10/2026 · fotos: fabricantes e lojas</span></div>
+</footer>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-name">
+  <div class="sheet-box">
+    <div class="sheet-head"><img id="s-img" src="" alt=""><div><p class="eyebrow" id="s-brand"></p><h4 id="sheet-name"></h4></div><button class="close" data-close aria-label="Fechar">✕</button></div>
+    <ul id="s-list"></ul>
+    <a class="btn ink" id="s-wa" target="_blank" rel="noopener">Mandar minha escolha pro Marcos <span class="arrow" aria-hidden="true">↗</span></a>
+    <p class="fine">Abre o WhatsApp com a impressora escolhida. Nenhuma compra é feita por aqui.</p>
+  </div>
+</div>
+
+<script>
+document.documentElement.classList.add('js');
+const P=[
+ {id:'a1mini',brand:'Bambu Lab',name:'A1 mini Combo (4 cores)',img:'img/a1-mini.webp',usd:'U$ 470',gs:'Gs. 2.867.000',store:'Shopping China · Ciudad del Este',stock:true,ribbon:'TOP 1',rc:'gold',stars:5,tags:['4 cores','18 cm','Aberta'],
+  why:'A mais fácil de todas: tira da caixa, segue o app e em 15 minutos está imprimindo. Vem com o AMS lite, que troca sozinho entre 4 cores. Para uma menina de 10 a 12 anos, isso vira brinquedo e aula ao mesmo tempo.',
+  specs:[['18 cm','tamanho máx.'],['4','cores de uma vez'],['15 min','para começar']],
+  pros:['Calibra sozinha, quase sem ajuste','Silenciosa, dá para deixar no quarto','Biblioteca enorme de modelos prontos (MakerWorld)','Cabe na cota com folga'],
+  cons:['Peça máxima de 18 cm','Estrutura aberta: supervisão ao imprimir','IA só pelo modo desenvolvedor (desliga o app da nuvem)']},
+ {id:'kobras1',brand:'Anycubic',name:'Kobra S1 Combo (4 cores)',img:'img/kobra-s1.webp',usd:'US$ 399',gs:'Loja oficial Anycubic',store:'Não encontrada nas lojas do Paraguai',stock:false,stockTxt:'Garimpar ou encomendar',ribbon:'TOP 2',rc:'',stars:4.5,tags:['4 cores','25 cm','Fechada'],
+  why:'Fechada, então a mão não chega no bico quente. Imprime peça maior e vem com o ACE Pro, que troca 4 cores e ainda seca o filamento. Com o firmware livre da comunidade (Rinkhals), é a mais fácil de colocar uma IA no comando.',
+  specs:[['25 cm','tamanho máx.'],['4','cores de uma vez'],['Fechada','mais segura']],
+  pros:['Fechada: mais segura e imprime mais materiais','Peça grande: 25 × 25 × 25 cm','Seca o filamento enquanto imprime','Melhor opção para IA (firmware livre)'],
+  cons:['Não achamos à venda no Paraguai hoje','Firmware livre é da comunidade: instalar com cuidado','Ocupa mais espaço na mesa']},
+ {id:'k1c',brand:'Creality',name:'K1C',img:'img/k1c.webp',usd:'U$ 500',gs:'Gs. 3.355.000',store:'Shopping China · Ciudad del Este',stock:true,ribbon:'TOP 3',rc:'',stars:4,tags:['1 cor','22 cm','Fechada'],
+  why:'Fechada, rápida e já vem aberta para programador, com o sistema Klipper. É a escolha se a ideia é o pai mexer junto e plugar uma IA sem gambiarra. Imprime uma cor por vez.',
+  specs:[['22 cm','tamanho máx.'],['1','cor por vez'],['Klipper','aberta de fábrica']],
+  pros:['Fechada e com câmera interna','Aberta para IA sem precisar trocar firmware','Bico de aço: imprime até fibra de carbono','À venda em Ciudad del Este'],
+  cons:['Uma cor só (o multicor é vendido à parte)','Mais ajustes que a Bambu','No limite da cota de US$ 500']},
+ {id:'a1',brand:'Bambu Lab',name:'A1',img:'img/a1.webp',usd:'U$ 425',gs:'Gs. 2.593.000',store:'Shopping China · Ciudad del Este',stock:true,ribbon:'MAIS BARATA',rc:'',stars:4.5,tags:['1 cor','25 cm','Aberta'],
+  why:'A irmã maior da A1 mini, mesma facilidade, peça maior e a mais barata da lista. Nesta versão imprime uma cor (o kit de 4 cores é vendido à parte).',
+  specs:[['25,6 cm','tamanho máx.'],['1','cor (AMS lite à parte)'],['15 min','para começar']],
+  pros:['A mais barata da lista','Peça grande com a facilidade da Bambu','Mesmo app e mesma biblioteca da A1 mini'],
+  cons:['Sem o multicor nesta versão','Estrutura aberta','IA só pelo modo desenvolvedor']},
+ {id:'p1s',brand:'Bambu Lab',name:'P1S',img:'img/p1s.webp',usd:'Gs. 8.140.000',gs:'Nissei',store:'Nissei · sem estoque',stock:false,stockTxt:'Sem estoque',ribbon:'PROFISSIONAL',rc:'off',stars:4,tags:['1 cor','25 cm','Fechada'],
+  why:'Excelente, mas é ferramenta de oficina. Para presente de criança, custa caro demais, passa da cota e hoje está sem estoque.',
+  specs:[['25,6 cm','tamanho máx.'],['Fechada','profissional'],['Acima','da cota']],
+  pros:['Fechada e muito rápida'],cons:['Bem mais cara','Passa da cota de US$ 500','Sem estoque hoje']}
+];
+const $=s=>document.querySelector(s);
+// cards
+$('#cards').innerHTML=P.map((p,i)=>`<article class="card ${i<3?'top':''}">
+ <div class="media"><span class="ribbon ${p.rc}">${p.ribbon}</span><img src="${p.img}" alt="${p.brand} ${p.name}" loading="lazy"></div>
+ <div class="body"><span class="brand-l">${p.brand}</span><h3>${p.name}</h3>
+ <div class="stars" aria-label="Nota ${p.stars} de 5">${'★'.repeat(Math.floor(p.stars))}${p.stars%1?'½':''}<span>para a idade dela</span></div>
+ <div class="p">${p.usd}<small>${p.id==='p1s'?'Nissei':p.gs} · ${p.id==='kobras1'?'fora do Paraguai':p.id==='p1s'?'':'Ciudad del Este'}</small></div>
+ <div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+ <span class="stock ${p.stock?'':'no'}"><span class="dot"></span>${p.stock?'Disponível':p.stockTxt}</span>
+ <button class="btn ${i===0?'ink':''}" data-buy="${i}">Quero essa <span class="arrow" aria-hidden="true">↗</span></button></div></article>`).join('');
+// bench
+let cur=0;
+function show(i){cur=i;const p=P[i];
+ document.querySelectorAll('.tab').forEach((t,k)=>t.setAttribute('aria-selected',k===i));
+ const im=$('#b-img');im.classList.add('swap');setTimeout(()=>{im.src=p.img;im.alt=p.brand+' '+p.name;im.onload=()=>im.classList.remove('swap');setTimeout(()=>im.classList.remove('swap'),300)},200);
+ $('#b-rank').textContent='0'+(i+1);
+ $('#b-tag').innerHTML='<span class="dot"></span>'+['Recomendada para a idade','Mais segura e melhor para IA','Aberta para programar'][i];
+ $('#b-price').innerHTML=p.usd+'<small>'+(i===1?'':p.gs)+'</small>';
+ $('#b-store').textContent=p.store;
+ const st=$('#b-stock');st.style.color=p.stock?'#2f7a52':'#b3492d';st.innerHTML='<span class="dot"></span>'+(p.stock?'Disponível':p.stockTxt);
+ $('#b-brand').textContent=p.brand;$('#b-name').textContent=p.name;$('#b-why').textContent=p.why;
+ $('#b-specs').innerHTML=p.specs.map(s=>`<div><b>${s[0]}</b><span>${s[1]}</span></div>`).join('');
+ $('#b-pros').innerHTML=p.pros.map(x=>`<li>${x}</li>`).join('');$('#b-cons').innerHTML=p.cons.map(x=>`<li>${x}</li>`).join('');
+}
+document.querySelectorAll('.tab').forEach((t,i)=>t.addEventListener('click',()=>show(i)));
+show(0);
+// quiz
+const ans={};
+document.querySelectorAll('.q').forEach(q=>q.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{
+ q.querySelectorAll('.opt').forEach(x=>x.setAttribute('aria-pressed',x===b));ans[q.dataset.q]=b.dataset.v;quiz();})));
+function quiz(){if(!ans.uso||!ans.cor||!ans.ia)return;
+ let i=0,why='';
+ if(ans.ia==='muito'){i=ans.cor==='sim'?1:2;why=ans.cor==='sim'?'Multicor, fechada e com firmware livre: é a que melhor aceita uma IA no comando sem abrir mão das cores.':'Já vem aberta para programar e é fechada. Perfeita para o pai plugar a IA.';}
+ else if(ans.cor==='nao'&&ans.uso!=='pai'){i=3;why='Mesma facilidade da Bambu, peça maior e a mais barata da lista. Se depois quiser cores, o kit é vendido à parte.';}
+ else if(ans.uso==='pai'&&ans.cor==='nao'){i=2;why='Fechada, rápida e aberta para mexer. Boa para quem gosta de ajustar.';}
+ else {i=0;why='A mais fácil para ela usar sozinha, em 4 cores e com folga na cota. É a que mais vira brinquedo e aula ao mesmo tempo.';}
+ const p=P[i];const r=$('#result');r.classList.remove('empty');
+ r.innerHTML=`<img src="${p.img}" alt=""><div><p class="eyebrow">A sua é</p><h4>${p.brand} ${p.name}</h4><p>${why}</p><button class="text-link" data-buy="${i}" style="background:none;border:0;padding:8px 0 0">Quero essa <span class="arrow">↗</span></button></div>`;}
+// sheet
+const sheet=$('#sheet');
+document.addEventListener('click',e=>{const b=e.target.closest('[data-buy]');if(b){let i=b.dataset.buy===''?cur:+b.dataset.buy;open(i);}
+ if(e.target.closest('[data-close]')||e.target===sheet)sheet.classList.remove('open');});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')sheet.classList.remove('open')});
+function open(i){const p=P[i];$('#s-img').src=p.img;$('#s-brand').textContent=p.brand;$('#sheet-name').textContent=p.name;
+ $('#s-list').innerHTML=[['Preço',p.usd+(p.id==='kobras1'||p.id==='p1s'?'':' · '+p.gs)],['Onde',p.store],['Estoque',p.stock?'Disponível':p.stockTxt],['Cota US$ 500',p.id==='p1s'?'Passa da cota':p.id==='k1c'?'No limite':'Cabe']].map(r=>`<li><span>${r[0]}</span><span>${r[1]}</span></li>`).join('');
+ $('#s-wa').href='https://wa.me/5598981235302?text='+encodeURIComponent(`Marcos, escolhi a ${p.brand} ${p.name} (${p.usd}). Pode me ajudar a fechar?`);
+ sheet.classList.add('open');$('#s-wa').focus();}
+// header, progress, reveal, chat
+const hd=$('#header'),pr=$('.progress');
+addEventListener('scroll',()=>{hd.classList.toggle('scrolled',scrollY>60);const h=document.documentElement;pr.style.transform=`scaleX(${scrollY/(h.scrollHeight-innerHeight)})`},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:0,rootMargin:"0px 0px -8% 0px"});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const ex=document.querySelectorAll('#exec span');
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){ex.forEach((s,k)=>setTimeout(()=>s.classList.add('on'),400+k*650));o.disconnect()}}),{threshold:.4}).observe($('#exec'));
+</script>
+</body>
+</html>
